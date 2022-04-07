@@ -1,7 +1,7 @@
 from collections import Generator
 
 
-def a_perfect_dish_to_share() -> Generator[int]:
+def perfect_number_generator() -> Generator[int]:
     """
     This generator generate all the perfect number - numbers equal to the sum of their dividers.
     :return: The next perfect number.
@@ -34,6 +34,6 @@ def is_perfect(number_to_check: int) -> int:
 
 
 if __name__ == "__main__":
-    generator = a_perfect_dish_to_share()
+    generator = perfect_number_generator()
     while True:
         print(next(generator))
