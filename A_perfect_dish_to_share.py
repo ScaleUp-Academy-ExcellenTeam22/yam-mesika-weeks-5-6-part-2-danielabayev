@@ -1,4 +1,4 @@
-from collections import Generator
+from collections.abc import Generator
 
 
 def perfect_number_generator() -> Generator[int]:
