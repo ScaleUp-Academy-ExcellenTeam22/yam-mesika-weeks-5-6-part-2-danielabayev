@@ -1,4 +1,11 @@
-def a_perfect_dish_to_share():
+from collections import Generator
+
+
+def a_perfect_dish_to_share() -> Generator[int]:
+    """
+    This generator generate all the perfect number - numbers equal to the sum of their dividers.
+    :return: The next perfect number.
+    """
     checked_number = 2
     while True:
         if is_perfect(checked_number):
@@ -6,8 +13,14 @@ def a_perfect_dish_to_share():
         checked_number += 1
 
 
-def is_perfect(number_to_check):
-    # To store sum of divisors
+def is_perfect(number_to_check: int) -> int:
+    """
+    This function taken from the site:
+    https://www.geeksforgeeks.org/perfect-number/
+    This function check if number is perfect number.
+    :param number_to_check: The number to check.
+    :return: True if the number is perfect number.
+    """
     dividers_sum = 1
 
     # Find all divisors and add them
@@ -17,8 +30,6 @@ def is_perfect(number_to_check):
             dividers_sum = dividers_sum + divider + number_to_check / divider
         divider += 1
 
-    # If sum of divisors is equal to
-    # n, then n is a perfect number
     return True if dividers_sum == number_to_check else False
 
 
