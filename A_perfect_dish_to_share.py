@@ -30,7 +30,7 @@ def is_perfect(number_to_check: int) -> int:
             dividers_sum = dividers_sum + divider + number_to_check / divider
         divider += 1
 
-    return True if dividers_sum == number_to_check else False
+    return dividers_sum == number_to_check
 
 
 if __name__ == "__main__":
